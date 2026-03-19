@@ -258,7 +258,7 @@ const services = ref([
   { id: 'svc_3', nombre: 'Cardiología', descripcion: 'Chequeo cardiovascular', duracion: 45, icon: 'mdi-heart-pulse' },
   { id: 'svc_4', nombre: 'Dermatología', descripcion: 'Diagnóstico y tratamiento de piel', duracion: 35, icon: 'mdi-face-man-shimmer' },
   { id: 'svc_5', nombre: 'Laboratorio', descripcion: 'Análisis clínicos', duracion: 20, icon: 'mdi-test-tube' },
-  { id: 'svc_6', nombre: 'Vacunación', descripcion: 'Aplicación de vacunas', duracion: 15, icon: 'mdi-syringe' },
+  { id: 'svc_6', nombre: 'Vacunación', descripcion: 'Aplicación de vacunas', duracion: 15, icon: 'mdi-needle' },
 ])
 
 const currentStep = computed({
