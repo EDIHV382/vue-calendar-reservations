@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-main: 'Inter', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll from decorative elements */
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-main);
+}
+
+/* Global animation utilities */
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-up-enter-from {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #5C6BC0 0%, #26C6DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(92, 107, 192, 0.15) !important;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f2ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #b0baf0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5C6BC0;
+}
