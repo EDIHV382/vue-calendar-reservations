@@ -67,7 +67,6 @@
               <v-btn
                 block
                 :disabled="!doctor.available"
-                :to="doctor.available ? '/booking' : null"
                 :color="doctor.available ? 'primary' : 'grey'"
                 :variant="doctor.available ? 'flat' : 'outlined'"
                 rounded="lg"
@@ -86,14 +85,18 @@
 <script setup>
 import { useDoctorsStore } from '@/stores/doctorsStore'
 import { useBookingStore } from '@/stores/bookingStore'
+import { useRouter } from 'vue-router'
 
 const doctorsStore = useDoctorsStore()
 const bookingStore = useBookingStore()
+const router = useRouter()
 
 const doctors = doctorsStore.doctors
 
 function selectDoctor(doctor) {
+  bookingStore.resetAll()
   bookingStore.selectService(doctor.specialty)
+  router.push('/booking')
 }
 </script>
 
