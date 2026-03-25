@@ -29,7 +29,8 @@ describe('bookingStore', () => {
     store.selectTime('14:30')
     expect(store.selectedDate).toBe('2024-01-15')
     expect(store.selectedTime).toBe('14:30')
-    expect(store.currentStep).toBe(3)
+    // selectTime ya no avanza el paso automáticamente
+    expect(store.currentStep).toBe(1)
   })
 
   it('confirma una cita con datos correctos', () => {
@@ -121,5 +122,18 @@ describe('bookingStore', () => {
 
     const pendingCount = store.appointments.filter(apt => apt.status === 'pending').length
     expect(pendingCount).toBe(1)
+  })
+  it('resetAll restablece todo el estado', () => {
+    const store = useBookingStore()
+    store.selectService('Consulta general')
+    store.selectDate('2024-01-15')
+    store.selectTime('14:30')
+
+    store.resetAll()
+
+    expect(store.selectedService).toBe('')
+    expect(store.selectedDate).toBe('')
+    expect(store.selectedTime).toBe('')
+    expect(store.currentStep).toBe(1)
   })
 })

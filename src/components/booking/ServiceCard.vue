@@ -64,9 +64,15 @@ const iconColorMap = {
   'mdi-stethoscope': '#5C6BC0',
   'mdi-baby': '#FF7043',
   'mdi-heart-pulse': '#E53935',
+  'mdi-face-man-shimmer': '#8E24AA',
   'mdi-face': '#8E24AA',
   'mdi-test-tube': '#00897B',
+  'mdi-needle': '#1E88E5',
   'mdi-syringe': '#1E88E5',
+  'mdi-bone': '#00897B',
+  'mdi-gender-female': '#EC407A',
+  'mdi-image-multiple': '#9C27B0',
+  'mdi-pulse': '#F44336',
 }
 
 const iconColor = computed(() => iconColorMap[props.icon] || '#5C6BC0')

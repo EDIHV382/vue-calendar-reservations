@@ -28,7 +28,7 @@ export const useBookingStore = defineStore('booking', () => {
 
   function selectTime(time) {
     selectedTime.value = time
-    currentStep.value = 3
+    // No avanzar automáticamente — el usuario usa el botón "Siguiente"
   }
 
   function confirmAppointment(patientData) {
@@ -87,6 +87,7 @@ export const useBookingStore = defineStore('booking', () => {
     confirmAppointment,
     cancelAppointment,
     resetSelection,
+    resetAll,
     goToStep
   }
 })

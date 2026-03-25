@@ -9,7 +9,7 @@ describe('availabilityStore', () => {
 
   it('inicializa con estado vacío', () => {
     const store = useAvailabilityStore()
-    expect(store.slabs).toEqual([])
+    expect(store.slots).toEqual([])
     expect(store.isLoading).toBe(false)
     expect(store.error).toBeNull()
     expect(store.currentDate).toBeNull()
@@ -19,20 +19,20 @@ describe('availabilityStore', () => {
     const store = useAvailabilityStore()
     await store.loadAvailability('2024-01-15')
 
-    expect(store.slabs.length).toBe(19)
-    expect(store.slabs[0].time).toBe('09:00')
-    expect(store.slabs[store.slabs.length - 1].time).toBe('18:00')
+    expect(store.slots.length).toBe(19)
+    expect(store.slots[0].time).toBe('09:00')
+    expect(store.slots[store.slots.length - 1].time).toBe('18:00')
   })
 
   it('marca algunos horarios como ocupados', async () => {
     const store = useAvailabilityStore()
     await store.loadAvailability('2024-01-15')
 
-    expect(store.slabs.length).toBeGreaterThan(0)
-    const occupied = store.slabs.filter(s => s.status === 'occupied')
-    const available = store.slabs.filter(s => s.status === 'available')
+    expect(store.slots.length).toBeGreaterThan(0)
+    const occupied = store.slots.filter(s => s.status === 'occupied')
+    const available = store.slots.filter(s => s.status === 'available')
 
-    expect(occupied.length).toBeLessThan(store.slabs.length)
+    expect(occupied.length).toBeLessThan(store.slots.length)
     expect(available.length).toBeGreaterThan(0)
   })
 })
